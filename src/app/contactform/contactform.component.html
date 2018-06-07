@@ -1,0 +1,23 @@
+<div class="contact" align="center" *ngIf="!sending">
+    <h1>Course Enquiry</h1>
+    <label>Name</label>
+    <input type="text" [(ngModel)]="name">
+    <br>
+    <label>Email</label>
+    <input type="text" [(ngModel)]="email">
+    <br>
+    <label>Message</label>
+    <textarea rows="5" cols="40" [(ngModel)]="message"></textarea>
+    <br>
+    <button class="btn btn-primary" (click)="sendEnquiry()">Send Enquiry</button>
+    <div *ngIf="error" class="errors">
+        <ul>
+            <li *ngFor="let x of errorlist">{{x}}</li>
+        </ul>
+    </div>
+</div>
+<div class="contact" *ngIf="sending">
+  <div class="image">
+    <img src="{{imagename}}">
+  </div>
+</div>
